@@ -11,7 +11,7 @@ import numpy as np
 
 
 # Loading model and threshold
-model_yolo = torch.hub.load('ultralytics/yolov5', 'custom', path ='model_yolov5m_2/weughts/best.pt', force_reload=False)
+model_yolo = torch.hub.load('ultralytics/yolov5', 'custom', path ='model_yolov5m_2/exp3/weights/best.pt' 'model_yolov5m_2/exp3/weights/best.pt', force_reload=False)
 CONFIDENCE_THRESHOLD = 0.5
 
 
