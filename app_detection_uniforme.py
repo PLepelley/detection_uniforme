@@ -137,44 +137,23 @@ if __name__ == "__main__":
 
 
 
-while True:
-		time.sleep(0.10)
-		message_title.empty()
+	while True:
+			time.sleep(0.10)
+			message_title.empty()
 
-		if stream.video_processor :
-			try:
-				label_id = stream.video_processor.label
-			except queue.Empty:
-				label_id = None
-			
-			if stream.video_processor.label != False :
-				for i in label_id:
-					if i == 1 or i == 3:
-						message = message_list[0]
-					else:
-						message = message_list[1]
-				message_title.subheader(message)
+			if stream.video_processor :
+				try:
+					label_id = stream.video_processor.label
+				except queue.Empty:
+					label_id = None
+				
+				if stream.video_processor.label != False :
+					for i in label_id:
+						if i == 1 or i == 3:
+							message = message_list[0]
+						else:
+							message = message_list[1]
+					message_title.subheader(message)
 
 
-#  import queue
 
-	# while True:
-	# 	time.sleep(0.20)
-	# 	message_title.empty() #Mettre avant, sinon la vidéo ne se lance pas ou erreur
-
-	# 	if stream.video_processor:
-	# 		try:
-	# 			ancien_detection = stream.video_processor.label
-	# 		except queue.Empty:
-	# 			ancien_detection = None
-
-	# 		# Indenté, sinon la vidéo ne se lance pas
-	# 		if not ancien_detection : 
-	# 			print("PAS DE DETECTION")
-	# 			message_title.subheader(message_list[0])
-	# 		elif 2 in ancien_detection : # elif 0 in ancien_detection and 2 in ancien_detection:
-	# 			print('COMPLET')
-	# 			message_title.success(message_list[1])
-	# 		else:
-	# 			print('INCOMPLET')
-	# 			message_title.error(message_list[2])
